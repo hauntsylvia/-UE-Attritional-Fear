@@ -1,17 +1,17 @@
-﻿using FoA.Client.Camera;
+﻿using FoA.Client.Controllers.FoACamera;
 using System;
 using System.Drawing;
 using UnrealEngine.Framework;
 
 namespace FoA
 {
-	public class Main
+    public class Main
 	{ // Indicates the main entry point for automatic loading by the plugin
 		public static FoACamera? Camera { get; set; }
 		public static void OnWorldBegin()
 		{
 			Debug.AddOnScreenMessage(-1, 10.0f, Color.DeepPink, "UE world begin.");
-			Camera = new();
+			Camera = new(new());
 			Debug.AddOnScreenMessage(-1, 10.0f, Color.DeepPink, "UE world begin.");
 		}
 

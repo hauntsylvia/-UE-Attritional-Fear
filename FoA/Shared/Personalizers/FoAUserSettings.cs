@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace FoA.Shared.Personalizers
 {
-    internal class FoAUserSettings
+    public class FoAUserSettings
     {
-        internal FoAUserSettings(IPersonalizer[]? Personalizers = null)
+        public FoAUserSettings(IPersonalizer[]? Personalizers = null)
         {
             List<IPersonalizer> AllPersonalizers = new();
             foreach(Type T in Assembly.GetExecutingAssembly().GetTypes())
@@ -28,6 +28,21 @@ namespace FoA.Shared.Personalizers
                 }
             }
             this.Personalizers = Personalizers ?? AllPersonalizers.ToArray();
+        }
+
+        public T GetSettingOfType<T>() where T : class, IPersonalizer, new()
+        {
+            foreach(IPersonalizer P in this.Personalizers)
+            {
+                if(P.GetType() == typeof(T))
+                {
+                    if(P is T PT)
+                    {
+                        return PT;
+                    }
+                }
+            }
+            return Activator.CreateInstance(typeof(T)) as T ?? throw new Exception($"No settings of type {typeof(T).Name}");
         }
 
         IPersonalizer[] Personalizers { get; }

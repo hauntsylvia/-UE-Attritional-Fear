@@ -8,23 +8,23 @@ using System.Threading.Tasks;
 
 namespace FoA.Shared.Users
 {
-    internal class FoAUser
+    public class FoAUser
     {
-        internal FoAUser(ulong UserId)
+        public FoAUser(ulong UserId)
         {
             this.UserId = UserId;
             this.Settings = new();
             
         }
 
-        internal FoAUser(ulong UserId, FoAUserSettings Settings)
+        public FoAUser(ulong UserId, FoAUserSettings Settings)
         {
             this.UserId = UserId;
             this.Settings = Settings;
         }
 
-        internal ulong UserId { get; }
+        public ulong UserId { get; }
 
-        internal FoAUserSettings Settings { get; }
+        public FoAUserSettings Settings { get; }
     }
 }

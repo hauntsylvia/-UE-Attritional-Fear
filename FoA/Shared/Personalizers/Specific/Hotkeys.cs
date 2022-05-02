@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace FoA.Shared.Personalizers.Specific
 {
-    internal class Hotkeys : IPersonalizer
+    public class Hotkeys : IPersonalizer
     {
-        internal Hotkeys()
+        public Hotkeys()
         {
 
         }
