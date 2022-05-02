@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+	<Nullable>Enable</Nullable>
+	<BaseOutputPath>C:\Users\izayy\OneDrive\Documents\Unreal Projects\FoA\Managed</BaseOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="UnrealEngine.Framework">
+      <HintPath>..\..\..\Managed\Tests\UnrealEngine.Framework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Shared\Enums\" />
+    <Folder Include="Shared\Util\" />
+  </ItemGroup>
+
+</Project>
