@@ -10,10 +10,10 @@ using UnrealEngine.Framework;
 
 namespace FoA.Client.Controllers.Base
 {
-    public class Controller<T> : Actor where T : class, IPersonalizer, new()
+    public class FoAController<T> where T : class, IPersonalizer, new()
     {
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-        public Controller(string Name, FoAUserSettings Settings) : base(Name, null)
+        public FoAController(FoAUserSettings Settings)
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
             this.UserSettingsReloaded(Settings);

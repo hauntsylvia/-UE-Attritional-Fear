@@ -50,7 +50,7 @@ namespace FoA.Shared.Personalizers.Specific
         public string RotateLeft { get; set; } = Keys.Q;
         public float MinimumZoom { get; set; } = 50f;
         public float MaximumZoom { get; set; } = 300f;
-        public float CameraSpeed { get; set; } = 750f;
+        public float CameraSpeed { get; set; } = 450f;
         public float CameraZoomSteps { get; set; } = 80f;
     }
 }
